@@ -144,7 +144,10 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
         datosTablaIncidencia();
         datosTablaReportes();
         btnDescargar.setEnabled(false);
-        
+        Actualizar.setEnabled(false);
+        nuevoDato.setEnabled(true);
+        insertarDatos.setEnabled(false);
+        txtId.setEditable(false);
     }
 
     /**
@@ -1750,9 +1753,13 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
     //Funcion para obtener el elemento seleccionado de la tabla y mostrar sus datos mediante un query
     private void tableclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableclientesMouseClicked
         // TODO add your handling code here:
+        Actualizar.setEnabled(true);
+        nuevoDato.setEnabled(true);
+        insertarDatos.setEnabled(false);
         String id=String.valueOf(tableclientes.getValueAt(tableclientes.getSelectedRow(), 0));
         for(int x=0;x<users.size();x++)
         {
+            
             if(users.get(x).get(0).equals(id))
             {
                 txtId.setEditable(false);
@@ -1772,6 +1779,9 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
     //Funcion para actualizar los datos seleccionados
     private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
         // TODO add your handling code here:
+        Actualizar.setEnabled(true);
+        nuevoDato.setEnabled(true);
+        insertarDatos.setEnabled(false);
         if(!txtId.getText().equals(""))
         {
             Connection cn;
@@ -2495,8 +2505,10 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
 
     private void nuevoDatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoDatoActionPerformed
         // TODO add your handling code here:
-        Actualizar.setVisible(false);
-        insertarDatos.setVisible(true);
+        Actualizar.setEnabled(false);
+        nuevoDato.setEnabled(true);
+        insertarDatos.setEnabled(true);
+
         txtId.setText("");
         txtCliente.setText("");
         txtApellido.setText("");
@@ -2534,8 +2546,9 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
            !txtEstado.getText().equals("") )
         {
             // TODO add your handling code here:
-            Actualizar.setVisible(true);
-            insertarDatos.setVisible(false);
+            Actualizar.setEnabled(true);
+            nuevoDato.setEnabled(true);
+            insertarDatos.setEnabled(true);
             Connection cn;
             ConexionBD conected=new ConexionBD();
             cn=conected.conexion();
