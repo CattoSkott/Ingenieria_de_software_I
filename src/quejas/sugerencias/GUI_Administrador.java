@@ -121,8 +121,8 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
         tabbed.setForegroundAt(3,new Color(255,255,255));
         tabbed.setForegroundAt(4,new Color(255,255,255));
         //Colores de los botones usados
-        actualizarBtn.setBackground(Color.white);
-        actualizarBtn.setForeground(new Color(134,105,226));
+        actualizabtn.setBackground(Color.white);
+        actualizabtn.setForeground(new Color(134,105,226));
         ANTERIOR.setBackground(new Color(134,105,226));
         ANTERIOR.setForeground(Color.white);
         sig.setBackground(new Color(134,105,226));
@@ -144,7 +144,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
         datosTablaIncidencia();
         datosTablaReportes();
         btnDescargar.setEnabled(false);
-        actualizarBtn.setEnabled(false);
+        actualizabtn.setEnabled(false);
         nuevoDato.setEnabled(true);
         insertarDato.setEnabled(false);
         txtId.setEditable(false);
@@ -182,7 +182,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
         txtColonia = new javax.swing.JTextField();
         txtCp = new javax.swing.JTextField();
         boxtipo = new javax.swing.JComboBox();
-        actualizarBtn = new javax.swing.JToggleButton();
+        actualizabtn = new javax.swing.JToggleButton();
         jLabel43 = new javax.swing.JLabel();
         txtMunicipio = new javax.swing.JTextField();
         txtEstado = new javax.swing.JTextField();
@@ -387,19 +387,19 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
             }
         });
 
-        actualizarBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        actualizarBtn.setText("Actualizar");
-        actualizarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        actualizabtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        actualizabtn.setText("Actualizar");
+        actualizabtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                actualizarBtnMouseEntered(evt);
+                actualizabtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                actualizarBtnMouseExited(evt);
+                actualizabtnMouseExited(evt);
             }
         });
-        actualizarBtn.addActionListener(new java.awt.event.ActionListener() {
+        actualizabtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarBtnActionPerformed(evt);
+                actualizabtnActionPerformed(evt);
             }
         });
 
@@ -501,7 +501,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
                             .addComponent(boxtipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(actualizarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(actualizabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(nuevoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -555,7 +555,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
                 .addComponent(boxtipo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actualizarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actualizabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nuevoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(insertarDato, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(78, 78, 78))
@@ -1753,7 +1753,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
     //Funcion para obtener el elemento seleccionado de la tabla y mostrar sus datos mediante un query
     private void tableclientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableclientesMouseClicked
         // TODO add your handling code here:
-        actualizarBtn.setEnabled(true);
+        actualizabtn.setEnabled(true);
         nuevoDato.setEnabled(true);
         insertarDato.setEnabled(false);
         String id=String.valueOf(tableclientes.getValueAt(tableclientes.getSelectedRow(), 0));
@@ -1777,9 +1777,9 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
         }
     }//GEN-LAST:event_tableclientesMouseClicked
     //Funcion para actualizar los datos seleccionados
-    private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
+    private void actualizabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizabtnActionPerformed
         // TODO add your handling code here:
-        actualizarBtn.setEnabled(true);
+        actualizabtn.setEnabled(true);
         nuevoDato.setEnabled(true);
         insertarDato.setEnabled(false);
         if(!txtId.getText().equals(""))
@@ -1820,7 +1820,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
             JOptionPane.showMessageDialog(null, "Debe seleccionar un dato de la tabla","SIN DATOS",2);
         }
         
-    }//GEN-LAST:event_actualizarBtnActionPerformed
+    }//GEN-LAST:event_actualizabtnActionPerformed
     //Funcion para obtener el elemento seleccionado de la tabla y mostrar sus datos mediante un query
     private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
         // TODO add your handling code here:
@@ -1925,17 +1925,17 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
         }
     }//GEN-LAST:event_btnAnt2ActionPerformed
     //Boton que cambia de color dependiendo de la posicion del mouse
-    private void actualizarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarBtnMouseEntered
+    private void actualizabtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizabtnMouseEntered
         // TODO add your handling code here:
-        actualizarBtn.setBackground(new Color(134,105,226));
-        actualizarBtn.setForeground(Color.white);
-    }//GEN-LAST:event_actualizarBtnMouseEntered
+        actualizabtn.setBackground(new Color(134,105,226));
+        actualizabtn.setForeground(Color.white);
+    }//GEN-LAST:event_actualizabtnMouseEntered
     //Boton que cambia de color dependiendo de la posicion del mouse
-    private void actualizarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarBtnMouseExited
+    private void actualizabtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizabtnMouseExited
         // TODO add your handling code here:
-        actualizarBtn.setBackground(Color.white);
-        actualizarBtn.setForeground(new Color(134,105,226));
-    }//GEN-LAST:event_actualizarBtnMouseExited
+        actualizabtn.setBackground(Color.white);
+        actualizabtn.setForeground(new Color(134,105,226));
+    }//GEN-LAST:event_actualizabtnMouseExited
     //Boton que cambia de color dependiendo de la posicion del mouse
     private void ANTERIORMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ANTERIORMouseEntered
         // TODO add your handling code here:
@@ -2505,7 +2505,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
 
     private void nuevoDatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoDatoActionPerformed
         // TODO add your handling code here:
-        actualizarBtn.setEnabled(false);
+        actualizabtn.setEnabled(false);
         nuevoDato.setEnabled(true);
         insertarDato.setEnabled(true);
 
@@ -2546,7 +2546,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
            !txtEstado.getText().equals("") )
         {
             // TODO add your handling code here:
-            actualizarBtn.setEnabled(true);
+            actualizabtn.setEnabled(true);
             nuevoDato.setEnabled(true);
             insertarDato.setEnabled(true);
             Connection cn;
@@ -2584,7 +2584,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
                 stmt.close();
                 datosTabla();
 
-                actualizarBtn.setVisible(true);
+                actualizabtn.setVisible(true);
                 insertarDato.setVisible(true);
                 txtId.setText("");
                 txtCliente.setText("");
@@ -2867,7 +2867,7 @@ public class GUI_Administrador extends javax.swing.JFrame implements WindowListe
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ANTERIOR;
-    private javax.swing.JToggleButton actualizarBtn;
+    private javax.swing.JToggleButton actualizabtn;
     private javax.swing.JComboBox boxGrafico;
     private javax.swing.JComboBox boxtipo;
     private javax.swing.JButton btnAnt2;
