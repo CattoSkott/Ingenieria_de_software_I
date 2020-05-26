@@ -8,6 +8,8 @@
 package quejas.sugerencias;
 
 import java.awt.Color;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,12 +21,13 @@ import javax.swing.JOptionPane;
  *
  * @author gerar
  */
-public class GUI_Log extends javax.swing.JFrame {
+public class GUI_Log extends javax.swing.JFrame implements WindowListener{
     //Variables de instancia
     boolean conectado=false;
     //Constructor que inicializa las variables de instancia y los jComponents
     public GUI_Log() {
-        initComponents();        
+        initComponents(); 
+        
         jPanel1.setBackground(new Color(134,105,226,221));
         txtUsuario.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, new Color(134,105,226)));
         txtContrasena.setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, new Color(134,105,226)));
@@ -109,7 +112,7 @@ public class GUI_Log extends javax.swing.JFrame {
         });
 
         btnCrear.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnCrear.setForeground(new java.awt.Color(134, 105, 221));
+        btnCrear.setForeground(new java.awt.Color(255, 255, 255));
         btnCrear.setText("Aun no tienes una cuenta");
         btnCrear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -332,7 +335,10 @@ public class GUI_Log extends javax.swing.JFrame {
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContrasenaActionPerformed
-
+    @Override
+    public void windowClosing(WindowEvent we) {
+        System.exit(0);
+    }
     /**
      * @param args the command line arguments
      */
@@ -381,4 +387,35 @@ public class GUI_Log extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        //To change body of generated methods, choose Tools | Templates.
+        System.exit(0);
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+        //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+        //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+         //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+         //To change body of generated methods, choose Tools | Templates.
+    }
 }
